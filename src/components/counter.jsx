@@ -27,9 +27,10 @@ class Counter extends Component {
     );
   }
 
-  handleClickIncrement() {
+  handleClickIncrement = product => {
+    console.log("product", product);
     this.setState({ count: this.state.count + 1 });
-  }
+  };
 
   render() {
     return (
@@ -38,7 +39,7 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={this.handleClickIncrement}
+          onClick={() => this.handleClickIncrement(this.state.count)}
           className="btn btn-secondary btn-sm"
         >
           Increment
