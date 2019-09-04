@@ -10,11 +10,9 @@ class Counter extends Component {
     fontWeight: "bold"
   };
   render() {
-    let classes = this.getBadgeClasses();
-
     return (
       <div>
-        <span style={this.styles} className={classes}>
+        <span style={this.styles} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
         <button className="btn btn-secondary btn-sm">Increment</button>
