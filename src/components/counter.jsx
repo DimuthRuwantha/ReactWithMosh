@@ -11,10 +11,10 @@ class Counter extends Component {
     fontWeight: "bold"
   };
 
-  /* constructor() {
+  constructor() {
     super();
     this.handleClickIncrement = this.handleClickIncrement.bind(this);
-  } */
+  }
   renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags!</p>;
 
@@ -27,10 +27,9 @@ class Counter extends Component {
     );
   }
 
-  handleClickIncrement = () => {
-    this.state.count += 1;
-    console.log(this.state.count);
-  };
+  handleClickIncrement() {
+    this.setState({ count: this.state.count + 1 });
+  }
 
   render() {
     return (
