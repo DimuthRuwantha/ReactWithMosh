@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
-import Counter from "./components/counter";
+import Counters from "./components/Counters";
 
-ReactDom.render(<Counter />, document.getElementById("root"));
+ReactDom.render(<Counters />, document.getElementById("root"));
 serviceWorker.unregister();
