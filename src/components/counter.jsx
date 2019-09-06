@@ -10,10 +10,9 @@ class Counter extends Component {
     fontWeight: "bold"
   };
 
-  constructor(props) {
+  /* constructor(props) {
     super(props);
-    this.handleClickIncrement = this.handleClickIncrement.bind(this);
-  }
+  } */
   /* renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags!</p>;
 
@@ -32,20 +31,25 @@ class Counter extends Component {
   };
 
   render() {
-    console.log("props", this.props);
+    //console.log("props", this.props.value);
     return (
       <div>
-        <h4>{this.props.children}</h4>
+        <h4>Title {this.props.value}</h4>
         <span style={this.styles} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
         <button
-          onClick={() => this.handleClickIncrement(this.state.value)}
+          onClick={() => this.handleClickIncrement(this.props)}
           className="btn btn-secondary btn-sm"
         >
           Increment
         </button>
-        {/* {this.renderTags()} */}
+        <button
+          onClick={() => this.props.onDelete(this.props.value)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
       </div>
     );
   }
